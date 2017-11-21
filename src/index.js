@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+
+import App from './App';
+import Contact from './Contact';
+import Showcase from './Showcase';
+
+ReactDOM.render(
+  <Router>
+    <div>
+    <Route exact path="/" component={App}/>
+      <Route path="/contact" component={Contact}/>
+      <Route path="/showcase" component={Showcase}/>
+    </div>
+  </Router>
+  , document.getElementById('root'));
 registerServiceWorker();
