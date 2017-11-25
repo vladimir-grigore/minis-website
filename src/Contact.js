@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './Components/NavBar';
 
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -10,6 +11,7 @@ class Contact extends Component {
   render() {
     return (
       <MuiThemeProvider>
+        <NavBar />
         <div className="Contact">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
