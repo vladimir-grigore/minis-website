@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import { Tab } from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { indigo800 } from 'material-ui/styles/colors';
+import { indigo700 } from 'material-ui/styles/colors';
 
 const style = {
   navBar: {
-    background: indigo800,
+    background: indigo700,
     height: 50,
     width: '100vw',
     textAlign: 'left',
     display: 'inline-block',
   },
   navButton: {
-    background: indigo800,
+    background: indigo700,
     color: 'white',
     paddingLeft: 20,
     paddingRight: 20,

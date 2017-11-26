@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
 
@@ -13,12 +12,6 @@ class Contact extends Component {
       <MuiThemeProvider>
         <NavBar />
         <div className="Contact">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Contact Page</h1>
-          </header>
-          <p className="App-intro">
-          </p>
           <RaisedButton label="Contact" primary={true} containerElement={<Link to='/'/>}/>
         </div>
       </MuiThemeProvider>

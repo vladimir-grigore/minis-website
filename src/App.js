@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+const style = {
+  hero_image: {
+    width: '100vw',
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="App">
-          <NavBar />
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to Vlad's Minis</h1>
-          </header>
-          <p className="App-intro">
-          </p>
-        </div>
+        <NavBar />
+        <img src='HeroImage.jpg' alt='' style={style.hero_image}></img>
       </MuiThemeProvider>
     );
   }
