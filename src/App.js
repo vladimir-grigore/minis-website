@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <NavBar />
-        <img src='HeroImage.jpg' alt='' style={style.hero_image}></img>
+        <img src='./HeroImage.jpg' alt='' style={style.hero_image}></img>
       </MuiThemeProvider>
     );
   }
