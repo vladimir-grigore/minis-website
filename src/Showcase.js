@@ -10,10 +10,9 @@ class Showcase extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <NavBar />
         <div className="Showcase">
-          <p className="App-intro">
-          </p>
+          <NavBar />
+          <p className="App-intro"></p>
           <RaisedButton label="Showcase" primary={true} containerElement={<Link to='/'/>}/>
         </div>
       </MuiThemeProvider>

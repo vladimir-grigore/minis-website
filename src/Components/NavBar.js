@@ -26,11 +26,11 @@ class NavBar extends Component {
   render() {
     return (
       <MuiThemeProvider>
-          <Paper style={style.navBar} zDepth={2} rounded={false} >
-            <Tab label='Home' style={style.navButton} containerElement={<Link to='/'/>}/>
-            <Tab label='Showcase' style={style.navButton} containerElement={<Link to='/showcase'/>}/>
-            <Tab label='Contact' style={style.navButton} containerElement={<Link to='/contact'/>}/>
-          </Paper>
+        <Paper style={style.navBar} zDepth={2} rounded={false} >
+          <Tab label='Home' style={style.navButton} containerElement={<Link to='/'/>}/>
+          <Tab label='Showcase' style={style.navButton} containerElement={<Link to='/showcase'/>}/>
+          <Tab label='Contact' style={style.navButton} containerElement={<Link to='/contact'/>}/>
+        </Paper>
       </MuiThemeProvider>
     );
   }

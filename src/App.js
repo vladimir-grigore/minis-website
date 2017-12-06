@@ -14,8 +14,10 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <NavBar />
-        <img src='./heroImage.jpg' alt='' style={style.hero_image}></img>
+        <div>
+          <NavBar />
+          <img src='./heroImage.jpg' alt='' style={style.hero_image}></img>
+        </div>
       </MuiThemeProvider>
     );
   }

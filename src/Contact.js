@@ -10,8 +10,9 @@ class Contact extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <NavBar />
         <div className="Contact">
+          <NavBar />
+          <p></p>
           <RaisedButton label="Contact" primary={true} containerElement={<Link to='/'/>}/>
         </div>
       </MuiThemeProvider>
