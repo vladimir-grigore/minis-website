@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { Link } from 'react-router-dom';
-import Paper from 'material-ui/Paper';
-import { Tab } from 'material-ui/Tabs';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { indigo700 } from 'material-ui/styles/colors';
+import { Link } from "react-router-dom";
+import Paper from "material-ui/Paper";
+import { Tab } from "material-ui/Tabs";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { indigo700 } from "material-ui/styles/colors";
 
 const style = {
   navBar: {
     background: indigo700,
     height: 50,
-    width: '100vw',
-    textAlign: 'left',
-    display: 'inline-block',
+    width: "100vw",
+    textAlign: "left",
+    display: "inline-block",
   },
   navButton: {
     background: indigo700,
-    color: 'white',
+    color: "white",
     paddingLeft: 20,
     paddingRight: 20,
   },
@@ -27,9 +27,9 @@ class NavBar extends Component {
     return (
       <MuiThemeProvider>
         <Paper style={style.navBar} zDepth={2} rounded={false} >
-          <Tab label='Home' style={style.navButton} containerElement={<Link to='/'/>}/>
-          <Tab label='Showcase' style={style.navButton} containerElement={<Link to='/showcase'/>}/>
-          <Tab label='Contact' style={style.navButton} containerElement={<Link to='/contact'/>}/>
+          <Tab label="Home" style={style.navButton} containerElement={<Link to="/"/>}/>
+          <Tab label="Showcase" style={style.navButton} containerElement={<Link to="/showcase"/>}/>
+          <Tab label="Contact" style={style.navButton} containerElement={<Link to="/contact"/>}/>
         </Paper>
       </MuiThemeProvider>
     );

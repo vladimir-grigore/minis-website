@@ -1,16 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import NavBar from './Components/NavBar';
+import React, { Component } from "react";
+import RaisedButton from "material-ui/RaisedButton";
+import Paper from 'material-ui/Paper';
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import emailjs from "emailjs-com";
 
-import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import emailjs from 'emailjs-com';
+import "./App.css";
+import NavBar from "./Components/NavBar";
 
+
+const style = {
+  hero_image: {
+    background: "url(./heroImage.jpg)",
+    backgroundSize: "cover",
+    height: "100vh",
+    width: "100vw",
+  },
+  contact_button: {
+    marginTop: 20,
+    position: "absolute",
+    top: 100,
+    left: 100,
+  }
+}
 class Contact extends Component {
   
   sendEmail = () => {
     // parameters: service_id, template_id, template_parameters
-    emailjs.send("mailgun","logo_email",{name: "Vlad", notes: "Check this out!"})
+    emailjs.send("mailgun","template_1",{name: "Vlad", notes: "Check this out!"})
     .then(function(response) {
       console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
     }, function(err) {
@@ -19,14 +35,18 @@ class Contact extends Component {
   }
 
   render() {
-    emailjs.init("user_cpsQu1uDlwzeJYpdIU0oS")
+    emailjs.init("user_S5kSqRfXGy6JWJ9I7xwre")
     
     return (
       <MuiThemeProvider>
         <div className="Contact">
           <NavBar />
-          <p></p>
-          <RaisedButton label="Contact" primary={true} onClick={this.sendEmail} />
+          <RaisedButton className="contact_button" 
+                        label="Contact" 
+                        primary={true} 
+                        onClick={this.sendEmail} 
+                        style={style.contact_button}/>
+          <Paper style={style.hero_image} zDepth={1} />  
         </div>
       </MuiThemeProvider>
     );
