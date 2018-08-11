@@ -1,8 +1,5 @@
 import React, { Component } from "react"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
-import Divider from "@material-ui/core/Divider"
+import { List, ListItem, ListItemText, Icon, Divider } from "@material-ui/core"
 import { Link } from "react-router-dom"
 
 export default class MenuItems extends Component {
@@ -10,16 +7,20 @@ export default class MenuItems extends Component {
     return(
       <List>
         <ListItem button component={Link} to="/">
+          <Icon>home</Icon>
           <ListItemText primary="Home" />
         </ListItem>
         <Divider/>
         <ListItem button component={Link} to="/showcase">
+          <Icon>collections</Icon>
           <ListItemText primary="Showcase" />
         </ListItem>
         <Divider/>
         <ListItem button component={Link} to="/contact">
+          <Icon>email</Icon>
           <ListItemText primary="Contact" />
         </ListItem>
+        <Divider/>
       </List>
     )
   }

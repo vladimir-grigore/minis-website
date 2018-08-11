@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import Drawer from "@material-ui/core/Drawer"
-import Button from "@material-ui/core/Button"
-// import { Link } from "react-router-dom";
+import { Button, Drawer, Icon } from "@material-ui/core"
+import styles from "./styles.js"
 
 import MenuItems from "./MenuItems"
 
@@ -16,8 +15,10 @@ export default class DrawerMenu extends Component {
 
   render() {
     return(
-      <div>
-        <Button onClick={this.toggleDrawer(true)}>Menu</Button>
+      <div style={styles.drawerContainer}>
+        <Button variant="outlined" onClick={this.toggleDrawer(true)} style={styles.drawerButton}>
+          <Icon>menu</Icon>
+        </Button>
         <Drawer open={this.state.isOpen} onClose={this.toggleDrawer(false)}>
           <div
             tabIndex={0}

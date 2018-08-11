@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import Button from "@material-ui/core/Button"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import emailjs from "emailjs-com"
+
+import DrawerMenu from "../Components/DrawerMenu"
 
 const style = {
   hero_image: {
@@ -33,7 +35,8 @@ class Contact extends Component {
     emailjs.init("user_S5kSqRfXGy6JWJ9I7xwre")
     
     return (
-      <div className="Contact">
+      <div>
+        <DrawerMenu />
         <Button className="contact_button" 
                 label="Contact" 
                 variant="outlined" 
@@ -42,10 +45,6 @@ class Contact extends Component {
                 style={style.contact_button}
         >
           Send mail
-        </Button>
-                
-        <Button variant="outlined" color="primary" component={Link} to={"/"}>
-          Home
         </Button>
         <div style={style.hero_image} />  
       </div>
