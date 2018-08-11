@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './App';
-import Contact from './Contact';
-import Showcase from './Showcase';
+import App from './pages/App';
+import Contact from './pages/Contact';
+import Showcase from './pages/Showcase';
 
 ReactDOM.render(
   <Router>

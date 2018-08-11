@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import Button from '@material-ui/core/Button';
-import emailjs from "emailjs-com";
-
-import NavBar from "./Components/NavBar";
+import React, { Component } from "react"
+import Button from "@material-ui/core/Button"
+import { Link } from "react-router-dom"
+import emailjs from "emailjs-com"
 
 const style = {
   hero_image: {
@@ -24,10 +23,10 @@ class Contact extends Component {
     // parameters: service_id, template_id, template_parameters
     emailjs.send("mailgun","template_1",{name: "Vlad", notes: "Check this out!"})
     .then(function(response) {
-      console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+      console.log("SUCCESS. status=%d, text=%s", response.status, response.text)
     }, function(err) {
-      console.log("FAILED. error=", err);
-    });
+      console.log("FAILED. error=", err)
+    })
   }
 
   render() {
@@ -35,16 +34,23 @@ class Contact extends Component {
     
     return (
       <div className="Contact">
-        <NavBar />
         <Button className="contact_button" 
                 label="Contact" 
-                primary={true} 
+                variant="outlined" 
+                color="primary"
                 onClick={this.sendEmail} 
-                style={style.contact_button}/>
-        <div style={style.hero_image} zDepth={1} />  
+                style={style.contact_button}
+        >
+          Send mail
+        </Button>
+                
+        <Button variant="outlined" color="primary" component={Link} to={"/"}>
+          Home
+        </Button>
+        <div style={style.hero_image} />  
       </div>
     );
   }
 }
 
-export default Contact;
+export default Contact

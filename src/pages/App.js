@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import NavBar from "./Components/NavBar";
+import DrawerMenu from "../Components/DrawerMenu"
 
 
 const style = {
@@ -16,11 +16,11 @@ class App extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }}>
-        <NavBar />
-        <div style={style.hero_image} zDepth={1} />
+        <DrawerMenu />
+        <div style={style.hero_image} />
       </div>
     );
   }
 }
 
-export default App;
+export default App
