@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import RaisedButton from "material-ui/RaisedButton";
-import Paper from 'material-ui/Paper';
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Button from '@material-ui/core/Button';
 import emailjs from "emailjs-com";
 
-import "./App.css";
 import NavBar from "./Components/NavBar";
-
 
 const style = {
   hero_image: {
@@ -38,17 +34,15 @@ class Contact extends Component {
     emailjs.init("user_S5kSqRfXGy6JWJ9I7xwre")
     
     return (
-      <MuiThemeProvider>
-        <div className="Contact">
-          <NavBar />
-          <RaisedButton className="contact_button" 
-                        label="Contact" 
-                        primary={true} 
-                        onClick={this.sendEmail} 
-                        style={style.contact_button}/>
-          <Paper style={style.hero_image} zDepth={1} />  
-        </div>
-      </MuiThemeProvider>
+      <div className="Contact">
+        <NavBar />
+        <Button className="contact_button" 
+                label="Contact" 
+                primary={true} 
+                onClick={this.sendEmail} 
+                style={style.contact_button}/>
+        <div style={style.hero_image} zDepth={1} />  
+      </div>
     );
   }
 }
