@@ -1,10 +1,11 @@
 import React, { Component } from "react"
 import { Button, Drawer, Icon } from "@material-ui/core"
-import styles from "./styles.js"
+import { withStyles } from "@material-ui/core/styles"
 
+import styles from "./styles.js"
 import MenuItems from "./MenuItems"
 
-export default class DrawerMenu extends Component {
+class DrawerMenu extends Component {
   state = {
     isOpen: false,
   }
@@ -14,15 +15,20 @@ export default class DrawerMenu extends Component {
   }
 
   render() {
+    const { classes } = this.props
     return(
       <div style={styles.drawerContainer}>
-        <Button variant="outlined" onClick={this.toggleDrawer(true)} style={styles.drawerButton}>
+        <Button variant="outlined" 
+          onClick={this.toggleDrawer(true)} 
+          style={styles.drawerButton}>
           <Icon>menu</Icon>
         </Button>
-        <Drawer open={this.state.isOpen} onClose={this.toggleDrawer(false)}>
-          <div
-            tabIndex={0}
-            role="button"
+        <Drawer
+          open={this.state.isOpen} 
+          onClose={this.toggleDrawer(false)}
+          classes={{ paper: classes.drawer }}
+          >
+          <div tabIndex={0} role="button"
             onClick={this.toggleDrawer(false)}
             onKeyDown={this.toggleDrawer(false)}
           >
@@ -33,3 +39,5 @@ export default class DrawerMenu extends Component {
     )
   }
 }
+
+export default withStyles(styles)(DrawerMenu)

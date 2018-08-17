@@ -13,7 +13,7 @@ export default class MenuItems extends Component {
         <Divider/>
         <ListItem button component={Link} to="/showcase">
           <Icon>collections</Icon>
-          <ListItemText primary="Showcase" />
+          <MenuItemText name="Showcase"/>
         </ListItem>
         <Divider/>
         <ListItem button component={Link} to="/contact">
@@ -24,4 +24,12 @@ export default class MenuItems extends Component {
       </List>
     )
   }
+}
+
+function MenuItemText({ name }) {
+  return(
+    <div>
+      <ListItemText primary={name} disableTypography="true" style={{ color: "#333"}}/>
+    </div>
+  )
 }
