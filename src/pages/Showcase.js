@@ -1,31 +1,51 @@
 import React, { Component } from "react"
 import Gallery from "react-photo-gallery"
+import Lightbox from "react-images"
 
 import DrawerMenu from "../Components/DrawerMenu"
+import photoSet from "./PhotoSet"
 
-const PHOTO_SET = [
-  {
-    src: "https://www.miniaturemarket.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/v/cvb280167-0476.jpg",
-    width: 1,
-    height: 1,
-  },
-  {
-    src: "http://i.imgur.com/0PLwJ.png",
-    width: 4,
-    height: 3,
-  },
-  {
-    src: "https://www.miniaturemarket.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/v/cvb280120-0113_2.jpg",
-    width: 1,
-    height: 1,
-  },
-]
 class Showcase extends Component {
+  constructor() {
+    super();
+    this.state = { currentImage: 0 };
+  }
+  openLightbox = (event, obj) => {
+    console.log(obj)
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true,
+    });
+  }
+  closeLightbox = () => {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  }
+  gotoPrevious = () => {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  }
+  gotoNext = () => {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  }
+
   render() {
     return (
-        <div>
+        <div style={{ backgroundColor: "black" }}>
           <DrawerMenu />
-          <Gallery photos={PHOTO_SET} columns="2" direction="column" />
+          <Gallery photos={photoSet} columns={3} direction="row" onClick={this.openLightbox} />
+          <Lightbox images={photoSet}
+            onClose={this.closeLightbox}
+            onClickPrev={this.gotoPrevious}
+            onClickNext={this.gotoNext}
+            currentImage={this.state.currentImage}
+            isOpen={this.state.lightboxIsOpen}
+          />
         </div>
     );
   }
