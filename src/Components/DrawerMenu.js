@@ -3,7 +3,7 @@ import { Button, Drawer, Icon } from "@material-ui/core"
 import { withStyles } from "@material-ui/core/styles"
 
 import styles from "./styles.js"
-import MenuItems from "./MenuItems"
+import DrawerMenuItems from "./DrawerMenuItems"
 
 class DrawerMenu extends Component {
   state = {
@@ -32,7 +32,7 @@ class DrawerMenu extends Component {
             onClick={this.toggleDrawer(false)}
             onKeyDown={this.toggleDrawer(false)}
           >
-            <MenuItems />
+            <DrawerMenuItems />
           </div>
         </Drawer>
       </div>

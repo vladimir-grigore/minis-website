@@ -1,4 +1,5 @@
 const styles = {
+  /* Hamburger menu button */
   drawerContainer: {
     display: "flex",
     position: "absolute",
@@ -10,7 +11,19 @@ const styles = {
     border: "1px solid white",
   },
   drawer: {
-    background: "#3f51b5",
+    backgroundColor: "#333",
+    paddingTop: "1vw",
+  },
+  /* Menu buttons */
+  buttonContainer: {
+    border: "1px solid #999",
+    textAlign: "center",
+    width: "12vw",
+    margin: "1vw 2vw",
+  },
+  link: {
+    color: "#999",
+    margin: "1vw",
   },
 }
 

@@ -3,7 +3,7 @@ import Gallery from "react-photo-gallery"
 import Lightbox from "react-images"
 
 import DrawerMenu from "../Components/DrawerMenu"
-import photoSet from "./PhotoSet"
+import photoSet from "./InfinityPhotoSet"
 
 class Showcase extends Component {
   constructor() {
@@ -45,6 +45,7 @@ class Showcase extends Component {
             onClickNext={this.gotoNext}
             currentImage={this.state.currentImage}
             isOpen={this.state.lightboxIsOpen}
+            backdropClosesModal={true}
           />
         </div>
     );
